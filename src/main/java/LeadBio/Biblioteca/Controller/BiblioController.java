@@ -27,10 +27,6 @@ public class BiblioController {
         return "Livro '" + livro.getTitulo() + "' salvo no banco com sucesso!";
     }
 
-    @GetMapping("/listaremprestados")
-    public List<BiblioDTO> atualizarMultas() {
-        ListarEmprestadosDAO.atualizarMultas();
-        return ListarEmprestadosDAO.listarEmprestimos();
-    }
+
 
 }

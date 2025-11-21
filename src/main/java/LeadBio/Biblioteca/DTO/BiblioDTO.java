@@ -7,6 +7,9 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 public class BiblioDTO {
+    @Positive
+    private Integer id;
+
     @NotBlank
     private String titulo;
 
@@ -21,6 +24,10 @@ public class BiblioDTO {
     private BigDecimal multa;
 
     // Getters e Setters
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+
     public String getTitulo() { return titulo; }
     public void setTitulo(String titulo) { this.titulo = titulo; }
 

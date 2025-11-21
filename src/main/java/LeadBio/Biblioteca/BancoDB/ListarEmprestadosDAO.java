@@ -24,7 +24,7 @@ public class ListarEmprestadosDAO {
 
             while (rs.next()) {
                 BiblioDTO e = new BiblioDTO();
-
+                e.setId(rs.getInt("id"));
                 e.setTitulo(rs.getString("titulo"));
                 e.setNomeAutor(rs.getString("nome_autor"));
                 e.setAnoPubli(rs.getInt("ano_publi"));
@@ -47,7 +47,7 @@ public class ListarEmprestadosDAO {
     public static void atualizarMultas() {
 
         String sql = """
-        UPDATE SynBiblioteca.Emprestimos
+        UPDATE SynBiblioteca.Livrosadc
         SET multa = 
             CASE 
                 WHEN NOW() > data_devolucao_prevista 
