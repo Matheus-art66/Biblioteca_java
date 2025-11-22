@@ -1,6 +1,7 @@
-package LeadBio.Biblioteca.BancoDB;
+package LeadBio.Biblioteca.ComandosDAO;
 
 
+import LeadBio.Biblioteca.BancoDB.ConexaoDB;
 import LeadBio.Biblioteca.DTO.BiblioDTO;
 
 import java.sql.Connection;
