@@ -22,7 +22,7 @@ public class adcLivroDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return "Livro"+ livro.getTitulo() +"adcionado com sucesso!";
+        return "Livro " + livro.getTitulo() + " adicionado com sucesso!";
     }
 
 }
