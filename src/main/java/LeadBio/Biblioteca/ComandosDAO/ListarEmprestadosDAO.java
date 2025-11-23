@@ -12,16 +12,13 @@ import java.util.List;
 
 public class ListarEmprestadosDAO {
     public static List<BiblioDTO> listarEmprestimos() {
-        String sql = "SELECT * FROM SynBiblioteca.Livrosadc WHERE status_reserva IN (?, ?)";
+        String sql = "SELECT * FROM SynBiblioteca.Livrosadc WHERE status_reserva IN ('EMPRESTADO','EXPIRADO');";
 
         List<BiblioDTO> lista = new ArrayList<>();
 
         try (Connection conn = ConexaoDB.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
-
-            ps.setString(1, "EMPRESTADO");
-            ps.setString(2, "EXPIRADO");
 
             while (rs.next()) {
                 BiblioDTO e = new BiblioDTO();

@@ -3,9 +3,9 @@ package LeadBio.Biblioteca.Controller;
 import LeadBio.Biblioteca.DTO.BiblioDTO;
 import LeadBio.Biblioteca.Service.BlibioService;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class BiblioController {
@@ -14,14 +14,49 @@ public class BiblioController {
         this.service=service;
     }
 
-    @PostMapping("/novolivro")
-    public String nvlivro(@Valid @RequestBody BiblioDTO livro){
-        String resultado = service.validacao(livro);
-        if (!resultado.equals("adicionado")) {
-            return resultado; // retorna a mensagem de erro
-        }
-        return "Livro '" + livro.getTitulo() + "' salvo no banco com sucesso!";
+    // -----------------------------
+    // 1. Adicionar novo livro
+
+    @PostMapping("/adicionar")
+    public String adicionarLivro(@RequestBody @Valid BiblioDTO livro) {
+        return service.validacao(livro);
     }
+
+    // -----------------------------
+    // 2. Listar livros disponíveis
+
+    @GetMapping("/disponiveis")
+    public List<BiblioDTO> listarDisponiveis() {
+        return service.listarDisponiveis();
+    }
+
+
+    // -----------------------------
+    // 3. Listar livros emprestados
+
+    @GetMapping("/emprestados")
+    public List<BiblioDTO> listarEmprestados() {
+        return service.listarEmprestimos();
+    }
+
+
+    // -----------------------------
+    // 4. Emprestar um livro
+
+    @PostMapping("/emprestar/{id}")
+    public String emprestar(@PathVariable int id) {
+        return service.emprestarLivro(id);
+    }
+
+
+    // -----------------------------
+    // 5. Deletar livro por ID
+
+    @DeleteMapping("/deletar/{id}")
+    public String deletar(@PathVariable int id) {
+        return service.Deletar(id);
+    }
+
 
 
 

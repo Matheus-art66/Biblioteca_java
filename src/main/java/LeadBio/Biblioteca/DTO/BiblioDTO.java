@@ -1,5 +1,6 @@
 package LeadBio.Biblioteca.DTO;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
@@ -19,9 +20,14 @@ public class BiblioDTO {
     @Positive(message = "O ano deve ser maior que zero!")
     private int anoPubli;
     private String statusReserva;
-    private Timestamp dataRetirada;
-    private Timestamp dataPrevista;
     private BigDecimal multa;
+
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    private Timestamp dataRetirada;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    private Timestamp dataPrevista;
+
+
 
     // Getters e Setters
 

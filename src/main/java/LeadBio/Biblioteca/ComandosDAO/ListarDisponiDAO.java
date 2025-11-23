@@ -13,15 +13,13 @@ import java.util.List;
 
 public class ListarDisponiDAO {
     public static List<BiblioDTO> listarDisponiveis(){
-        String sql ="SELECT * FROM SynBiblioteca.Livrosadc WHERE status_reserva = ?;";
+        String sql ="SELECT * FROM SynBiblioteca.Livrosadc WHERE status_reserva = 'DISPONIVEL';";
 
         List<BiblioDTO> lista = new ArrayList<>();
 
         try(Connection conn = ConexaoDB.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery()) {
-
-            ps.setString(1,"DISPONIVEL");
 
             while (rs.next()){
                 BiblioDTO e = new BiblioDTO();

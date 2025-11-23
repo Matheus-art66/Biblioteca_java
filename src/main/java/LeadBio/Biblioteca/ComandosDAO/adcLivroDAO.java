@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 
 public class adcLivroDAO {
-    public static void inserir(BiblioDTO livro){
+    public static String inserir(BiblioDTO livro){
         String sql = "INSERT INTO  SynBiblioteca.Livrosadc(titulo,nome_autor,ano_publi) VALUES(?,?,?)";
 
         try(Connection conn = ConexaoDB.getConnection();
@@ -22,6 +22,7 @@ public class adcLivroDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return "Livro"+ livro.getTitulo() +"adcionado com sucesso!";
     }
 
 }
