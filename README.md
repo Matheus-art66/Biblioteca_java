@@ -39,7 +39,8 @@ O sistema está estruturado em camadas como **DTO**, **DAO** e utilitários para
 - │ │ └─ Outros DAOs...
 - │ ├─ DTO/
 - │ │ └─ BiblioDTO.java
-- │ └─ (futuro) Service/
+- │ └─ Service/
+- │ │  └─BlibioService
 - └─ Main.java
 
 
@@ -63,7 +64,7 @@ O sistema está estruturado em camadas como **DTO**, **DAO** e utilitários para
 
 ## ▶ Como Executar
 1. Clonar o repositório
-- git clone https://github.com/seu-usuario/seu-repositorio.git
+- git clone https://github.com/Matheus-art66/Biblioteca_java
 
 2. Compilar
 - mvn clean install
