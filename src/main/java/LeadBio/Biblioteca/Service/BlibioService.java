@@ -1,7 +1,6 @@
 package LeadBio.Biblioteca.Service;
 
-import LeadBio.Biblioteca.ComandosDAO.*;
-import LeadBio.Biblioteca.DTO.BiblioDTO;
+import LeadBio.Biblioteca.BancoDB.BiblioDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

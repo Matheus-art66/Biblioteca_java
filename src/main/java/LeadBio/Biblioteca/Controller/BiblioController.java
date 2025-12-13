@@ -1,6 +1,6 @@
 package LeadBio.Biblioteca.Controller;
 
-import LeadBio.Biblioteca.DTO.BiblioDTO;
+import LeadBio.Biblioteca.BancoDB.BiblioDTO;
 import LeadBio.Biblioteca.Service.BlibioService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
