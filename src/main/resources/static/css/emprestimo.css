@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image:url(https://img.freepik.com/vetores-premium/interior-moderno-da-biblioteca-com-estantes-organizadas-e-area-de-leitura_1332476-4746.jpg?semt=ais_se_enriched&w=740&q=80);
+    /* Impede que a imagem se repita */
+  background-repeat: no-repeat; 
+
+  /* Opcional: Garante que a imagem cubra toda a área do fundo */
+  background-size: cover; 
+  
+  /* Opcional: Fixa a imagem para que ela não role com o conteúdo */
+  background-attachment: fixed; 
+
+  /* Opcional: Centraliza a imagem no fundo */
+  background-position: center; 
+}
+
+h1{
+    color: #273941;
+}
+
+#cabeca{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(105, 201, 102, 0.747);
+}
+
+#sreachlv{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.texto{
+    width: 40rem;
+    height: 40px;
+}
+
+.botao{
+    width: 70px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+#en{
+    width: 100%;
+    height: 21rem;
+    display: flex;
+    justify-content: center;
+}
+
+#Ex{
+    margin-top: 10px;
+    background-color: white;
+    height: 20rem;
+    width: 50rem;
+    border-radius: 10px;
+    border: 3px solid black;
+}
