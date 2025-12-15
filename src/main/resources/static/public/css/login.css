@@ -1,0 +1,119 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+/* ===== FUNDO ===== */
+body {
+  height: 100vh;
+  background: url(/img/img.jpg) no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== OVERLAY ESCURO (opcional, deixa elegante) ===== */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* ===== CAIXA DE LOGIN ===== */
+.login-container {
+  position: relative;
+  width: 360px;
+  padding: 35px 30px;
+  border-radius: 10px;
+
+  /* efeito vidro */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  color: #fff;
+}
+
+/* ===== TÍTULOS ===== */
+.login-container h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.login-container h2 {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-bottom: 28px;
+}
+
+/* ===== FORMULÁRIO ===== */
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+
+/* ===== INPUTS ===== */
+.login-container input {
+  padding: 11px 12px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.login-container input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.login-container input:focus {
+  outline: none;
+  border-color: #90cdf4;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== BOTÃO ===== */
+.login-container button {
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  background: linear-gradient(135deg, #2c5282, #1e3a5f);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-container button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== RODAPÉ ===== */
+.login-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.85;
+}

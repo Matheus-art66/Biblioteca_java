@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Usuário | Sistema de Biblioteca</title>
+ <link rel="stylesheet" href="../css/admin.css">
+
+
+
+
+</head>
+
+<body>
+
+<header>
+  <h1>Sistema de Biblioteca</h1>
+</header>
+
+<nav>
+  <a href="index.html">Início</a>
+  <a href="cadastrar.html">Cadastrar Livro</a>
+  <a href="listar.html">Listar Livros</a>
+  <a href="emprestimo.html">Empréstimos</a>
+</nav>
+
+<main>
+  <div class="container">
+    <h2>Cadastrar Usuário</h2>
+
+    <form class="form-grid">
+
+      <div>
+        <label>Nome Completo</label>
+        <input type="text" placeholder="Nome do usuário">
+      </div>
+
+      <div>
+        <label>Usuário</label>
+        <input type="text" placeholder="Login do usuário">
+      </div>
+
+      <div>
+        <label>E-mail</label>
+        <input type="email" placeholder="email@exemplo.com">
+      </div>
+
+      <div>
+        <label>Senha</label>
+        <input type="password">
+      </div>
+
+      <div>
+        <label>Confirmar Senha</label>
+        <input type="password">
+      </div>
+
+      <div>
+        <label>Perfil</label>
+        <select>
+          <option>Administrador</option>
+          <option>Bibliotecário</option>
+          <option>Atendente</option>
+        </select>
+      </div>
+
+      <div class="full-width">
+        <button type="submit">Cadastrar Usuário</button>
+      </div>
+
+    </form>
+  </div>
+</main>
+
+</body>
+</html>
