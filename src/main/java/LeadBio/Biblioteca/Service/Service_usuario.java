@@ -4,16 +4,15 @@ import LeadBio.Biblioteca.BancoDB.UserDB;
 import LeadBio.Biblioteca.BancoDB.UserDTO;
 import LeadBio.Biblioteca.Mapper.UserMapper;
 import LeadBio.Biblioteca.Repository.UserRepository;
-import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 
 @Service
 public class Service_usuario {
 
-    private static UserRepository userRepository ;
+    private final UserRepository userRepository ;
     private Service_usuario(UserRepository userRepository){this.userRepository =userRepository;}
 
-    public static UserDB cadastrar(UserDTO dto){
+    public UserDB cadastrar(UserDTO dto){
         // 🔴 Validações de negócio
         if (dto.getNomeUsuario() == null || dto.getNomeUsuario().isBlank()) {
             throw new IllegalArgumentException("Nome do usuário é obrigatório");

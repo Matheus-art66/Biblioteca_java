@@ -5,9 +5,6 @@
   <title>Cadastrar Usuário | Sistema de Biblioteca</title>
  <link rel="stylesheet" href="/static/css/admin.css">
 
-
-
-
 </head>
 
 <body>
@@ -27,42 +24,39 @@
   <div class="container">
     <h2>Cadastrar Usuário</h2>
 
-    <form class="form-grid">
+   <form class="form-grid">
 
-      <div>
-        <label>Nome Completo</label>
-        <input type="text" placeholder="Nome do usuário">
-      </div>
+    <div class="field">
+      <label>Nome Completo</label>
+      <input type="text" placeholder="Nome do usuário">
+    </div>
 
-      <div>
-        <label>E-mail</label>
-        <input type="email" placeholder="email@exemplo.com">
-      </div>
+    <div class="field">
+      <label>Senha</label>
+      <input type="password" >
+    </div>
 
-      <div>
-        <label>Senha</label>
-        <input type="password">
-      </div>
+    <div class="field">
+      <label>E-mail</label>
+      <input type="email" placeholder="email@exemplo.com">
+    </div>
 
-      <div>
-        <label>Confirmar Senha</label>
-        <input type="password">
-      </div>
+    <div class="field">
+      <label>Confirmar Senha</label>
+      <input type="password">
+    </div>
 
-      <div>
-        <label>Perfil</label>
-        <select>
-          <option>Administrador</option>
-          <option>Bibliotecário</option>
-          <option>Atendente</option>
-        </select>
-      </div>
+    <div class="field full-width">
+      <label>CPF</label>
+      <input type="text" placeholder="CPF do usuário">
+    </div>
 
-      <div class="full-width">
-        <button type="submit">Cadastrar Usuário</button>
-      </div>
+    <div class="full-width">
+      <button type="submit">Cadastrar</button>
+    </div>
 
-    </form>
+  </form>
+
   </div>
 </main>
 

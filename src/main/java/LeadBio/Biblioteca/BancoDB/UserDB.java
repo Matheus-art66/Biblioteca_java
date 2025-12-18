@@ -26,4 +26,7 @@ public class UserDB {
     @Column(name = "senha",nullable = false)
     private String senha;
 
+    @Column(name = "perfil",nullable = false)
+    private String perfil;
+
 }
