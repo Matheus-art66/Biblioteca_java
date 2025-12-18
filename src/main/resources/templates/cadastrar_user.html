@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Usuário | Sistema de Biblioteca</title>
+  <link rel="stylesheet" href="/static/css/usuario.css">
+</head>
+
+<body class="admin-page">
+
+<header>
+  <h1>Sistema de Biblioteca</h1>
+</header>
+
+<main>
+  <div class="container">
+    <h2>Cadastrar Usuário</h2>
+
+   <form class="form-grid">
+
+    <div class="field">
+      <label>Nome Completo</label>
+      <input type="text" placeholder="Nome do usuário">
+    </div>
+
+    <div class="field">
+      <label>Senha</label>
+      <input type="password" >
+    </div>
+
+    <div class="field">
+      <label>E-mail</label>
+      <input type="email" placeholder="email@exemplo.com">
+    </div>
+
+    <div class="field">
+      <label>Confirmar Senha</label>
+      <input type="password">
+    </div>
+
+    <div class="field full-width">
+      <label>CPF</label>
+      <input type="text" placeholder="CPF do usuário">
+    </div>
+
+    <div class="full-width">
+      <button type="submit">Cadastrar</button>
+    </div>
+
+  </form>
+
+    <!-- LINK DE VOLTA PARA LOGIN -->
+    <p style="text-align:center; margin-top:20px;">
+      Já tem conta?
+      <a href="/templates/login.html">Voltar para Login</a>
+    </p>
+
+  </div>
+</main>
+
+</body>
+</html>

@@ -16,6 +16,7 @@ public class BiblioDTO {
 
     @NotBlank
     private String nomeAutor;
+    private String editora;
 
     @Positive(message = "O ano deve ser maior que zero!")
     private Integer anoPubli;
@@ -36,6 +37,9 @@ public class BiblioDTO {
 
     public String getTitulo() { return titulo; }
     public void setTitulo(String titulo) { this.titulo = titulo; }
+
+    public String getEditora() {return editora;}
+    public void setEditora(String editora) {this.editora = editora;}
 
     public String getNomeAutor() { return nomeAutor; }
     public void setNomeAutor(String nomeAutor) { this.nomeAutor = nomeAutor; }

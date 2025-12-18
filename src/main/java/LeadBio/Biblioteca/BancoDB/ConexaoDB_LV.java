@@ -29,6 +29,9 @@ public class ConexaoDB_LV {
     @Column(name = "ano_publi")
     private Integer anoPublicacao;
 
+    @Column(name = "editora")
+    private String editora;
+
     @Column(name = "status_reserva")
     private String statusReserva;
 
