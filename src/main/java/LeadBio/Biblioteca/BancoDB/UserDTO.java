@@ -2,6 +2,7 @@ package LeadBio.Biblioteca.BancoDB;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
+import lombok.Builder;
 
 public class UserDTO {
     @Positive
@@ -18,6 +19,9 @@ public class UserDTO {
 
     @NotBlank
     private String senha;
+
+    @NotBlank
+    private String perfil;
 
     //GETTERS E SETTERS
 
@@ -36,4 +40,7 @@ public class UserDTO {
 
     public String getSenha() {return senha;}
     public void setSenha(String senha) {this.senha = senha;}
+
+    public String getPerfil() {return perfil;}
+    public void setPerfil(String perfil) {this.perfil = perfil;}
 }

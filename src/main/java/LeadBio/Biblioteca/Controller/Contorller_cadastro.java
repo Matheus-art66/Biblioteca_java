@@ -12,13 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/cadastro")
+@RequestMapping("/cadastrar")
 public class Contorller_cadastro {
+
+    private final Service_usuario usuario;
+    public Contorller_cadastro(Service_usuario usuario){
+        this.usuario=usuario;
+    }
+
     @PostMapping
     public ResponseEntity<UserDB> cadastro(
             @RequestBody @Valid UserDTO userDTO
     ) {
-        UserDB usuarioSalvo = Service_usuario.cadastrar(userDTO);
+        UserDB usuarioSalvo = usuario.cadastrar(userDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioSalvo);
     }
 }
