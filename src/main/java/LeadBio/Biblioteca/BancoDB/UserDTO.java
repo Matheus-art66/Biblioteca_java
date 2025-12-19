@@ -1,26 +1,29 @@
 package LeadBio.Biblioteca.BancoDB;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
-import lombok.Builder;
+import jakarta.validation.constraints.Size;
 
 public class UserDTO {
     @Positive
     private Integer id;
 
     @NotBlank
-    private String nomeUsuario;
+    private String nome;
 
+    @Email
     @NotBlank
     private String email;
 
     @NotBlank
+    @Size(min = 11, max = 11)
     private String cpf;
 
     @NotBlank
+    @Size(min = 8)
     private String senha;
 
-    @NotBlank
     private String perfil;
 
     //GETTERS E SETTERS
@@ -29,8 +32,8 @@ public class UserDTO {
     public @Positive Integer getId() {return id;}
     public void setId(Integer id) {this.id = id;}
 
-    public String getNomeUsuario() {return nomeUsuario;}
-    public void setNomeUsuario(String nomeUsuario) {this.nomeUsuario = nomeUsuario;}
+    public String getNome() {return nome;}
+    public void setNome(String nome) {this.nome = nome;}
 
     public String getEmail() {return email;}
     public void setEmail(String email) {this.email = email;}

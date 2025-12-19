@@ -7,14 +7,14 @@ import LeadBio.Biblioteca.Repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Service_usuario {
+public class usuarioService {
 
     private final UserRepository userRepository ;
-    private Service_usuario(UserRepository userRepository){this.userRepository =userRepository;}
+    private usuarioService(UserRepository userRepository){this.userRepository =userRepository;}
 
     public UserDB cadastrar(UserDTO dto){
         // 🔴 Validações de negócio
-        if (dto.getNomeUsuario() == null || dto.getNomeUsuario().isBlank()) {
+        if (dto.getNome() == null || dto.getNome().isBlank()) {
             throw new IllegalArgumentException("Nome do usuário é obrigatório");
         }
 
