@@ -21,8 +21,9 @@ public class UserDTO {
     private String cpf;
 
     @NotBlank
-    @Size(min = 8)
+    @Size(max = 8)
     private String senha;
+
 
     private String perfil;
 
