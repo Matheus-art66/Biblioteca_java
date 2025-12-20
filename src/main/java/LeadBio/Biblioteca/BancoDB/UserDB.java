@@ -31,4 +31,11 @@ public class UserDB {
     @Column(name = "perfil")
     private String perfil;
 
+    @PrePersist
+    public void prePersist() {
+        if (this.perfil == null) {
+            this.perfil = "CLIENTE";
+        }
+    }
+
 }
