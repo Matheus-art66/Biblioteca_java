@@ -1,6 +1,6 @@
 package LeadBio.Biblioteca.Controller;
 
-import LeadBio.Biblioteca.BancoDB.UserDTO;
+import LeadBio.Biblioteca.DTO.UserDTO;
 import LeadBio.Biblioteca.Service.usuarioService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

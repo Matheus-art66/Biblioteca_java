@@ -1,23 +1,21 @@
 package LeadBio.Biblioteca.Service;
 
-import LeadBio.Biblioteca.BancoDB.BiblioDTO;
-import LeadBio.Biblioteca.BancoDB.ConexaoDB_LV;
+import LeadBio.Biblioteca.DTO.LivroDTO;
+import LeadBio.Biblioteca.BancoDB.LivroDB;
 import LeadBio.Biblioteca.Mapper.LivroMapper;
 import LeadBio.Biblioteca.Repository.LivroRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
-public class Service_adc {
+public class LivroService {
 
     private final LivroRepository livroRepository;
 
-    public Service_adc(LivroRepository livroRepository){
+    public LivroService(LivroRepository livroRepository){
         this.livroRepository = livroRepository;
     }
 
-    public ConexaoDB_LV salvar(BiblioDTO dto) {
+    public LivroDB salvar(LivroDTO dto) {
 
         if (dto.getTitulo() == null || dto.getTitulo().isBlank()) {
             throw new IllegalArgumentException("O título é obrigatório");
@@ -27,7 +25,7 @@ public class Service_adc {
             throw new IllegalArgumentException("O nome do autor é obrigatório");
         }
 
-        ConexaoDB_LV livro = LivroMapper.toEntity(dto);
+        LivroDB livro = LivroMapper.toEntity(dto);
         return livroRepository.save(livro);
     }
 

@@ -1,20 +1,18 @@
 package LeadBio.Biblioteca.Controller;
 
-import LeadBio.Biblioteca.BancoDB.BiblioDTO;
-import LeadBio.Biblioteca.BancoDB.ConexaoDB_LV;
-import LeadBio.Biblioteca.Service.Service_adc;
+import LeadBio.Biblioteca.DTO.LivroDTO;
+import LeadBio.Biblioteca.BancoDB.LivroDB;
+import LeadBio.Biblioteca.Service.LivroService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/livros")
 public class Controller_adc {
-    private final Service_adc service;
-    public Controller_adc(Service_adc service) {
+    private final LivroService service;
+    public Controller_adc(LivroService service) {
         this.service=service;
     }
 
@@ -22,10 +20,10 @@ public class Controller_adc {
     // 1. Adicionar novo livro
 
     @PostMapping
-    public ResponseEntity<ConexaoDB_LV> adicionarLivro(
-            @RequestBody @Valid BiblioDTO livro
+    public ResponseEntity<LivroDB> adicionarLivro(
+            @RequestBody @Valid LivroDTO livro
     ) {
-        ConexaoDB_LV salvo = service.salvar(livro);
+        LivroDB salvo = service.salvar(livro);
         return ResponseEntity.status(HttpStatus.CREATED).body(salvo);
     }
 

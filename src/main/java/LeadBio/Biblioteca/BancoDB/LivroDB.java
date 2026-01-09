@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ConexaoDB_LV {
+public class LivroDB {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

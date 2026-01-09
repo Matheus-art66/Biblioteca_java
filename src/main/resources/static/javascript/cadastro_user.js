@@ -21,7 +21,7 @@ document.getElementById("formCadastro").addEventListener("submit", function (e) 
     // 👉 só adiciona perfil se existir no HTML
     if (selectPerfil) {
         dados.perfil = selectPerfil.value;
-    }
+    }""
     // se não existir, o banco assume CLIENTE
 
     fetch("/cadastrar", {

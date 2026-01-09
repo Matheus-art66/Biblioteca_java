@@ -10,6 +10,11 @@ public class UsuarioPageController {
         return "cadastrar_user";
     }
 
+    @GetMapping("/cadastroc")
+    public String cadastroc() {
+        return "public/admin/adm_adc_user";
+    }
+
     @GetMapping("/dados")
     public String dados() {
         return "public/user/dados";

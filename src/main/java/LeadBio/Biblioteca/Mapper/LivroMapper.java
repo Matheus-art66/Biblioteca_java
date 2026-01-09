@@ -1,12 +1,11 @@
 package LeadBio.Biblioteca.Mapper;
 
-import LeadBio.Biblioteca.BancoDB.BiblioDTO;
-import LeadBio.Biblioteca.BancoDB.ConexaoDB_LV;
-import LeadBio.Biblioteca.BancoDB.UserDB;
+import LeadBio.Biblioteca.DTO.LivroDTO;
+import LeadBio.Biblioteca.BancoDB.LivroDB;
 
 public class LivroMapper {
-    public static ConexaoDB_LV toEntity(BiblioDTO dto) {
-        ConexaoDB_LV livro = new ConexaoDB_LV();
+    public static LivroDB toEntity(LivroDTO dto) {
+        LivroDB livro = new LivroDB();
         livro.setTitulo(dto.getTitulo());
         livro.setNomeAutor(dto.getNomeAutor());
         livro.setAnoPublicacao(dto.getAnoPubli());
@@ -19,8 +18,8 @@ public class LivroMapper {
     }
 
 
-    public static BiblioDTO toDTO(ConexaoDB_LV livro) {
-        BiblioDTO dto = new BiblioDTO();
+    public static LivroDTO toDTO(LivroDB livro) {
+        LivroDTO dto = new LivroDTO();
         dto.setId(Math.toIntExact(livro.getId()));
         dto.setTitulo(livro.getTitulo());
         dto.setNomeAutor(livro.getNomeAutor());

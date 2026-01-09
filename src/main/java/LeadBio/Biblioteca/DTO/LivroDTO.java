@@ -1,4 +1,4 @@
-package LeadBio.Biblioteca.BancoDB;
+package LeadBio.Biblioteca.DTO;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class BiblioDTO {
+public class LivroDTO {
     @Positive
     private Integer id;
 

@@ -2,9 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Cadastrar Usuário | Sistema de Biblioteca</title>
- <link rel="stylesheet" href="/css/adc_user.css">
-
+  <title>Cadastrar Funcionário | Sistema de Biblioteca</title>
+  <link rel="stylesheet" href="/css/adc_user.css">
 </head>
 
 <body>
@@ -22,59 +21,95 @@
 
 <main>
   <div class="container">
-    <h2>Cadastrar Usuário</h2>
+    <h2>Cadastrar Funcionário</h2>
 
-   <form class="form-grid" id="formCadastro">
+    <form class="form-grid" id="formCadastroFuncionario">
 
+      <!-- NOME -->
       <div class="field">
         <label>Nome Completo</label>
-        <input type="text" placeholder="Nome do usuário" name="nome">
+        <input 
+          type="text" 
+          name="nome" 
+          placeholder="Nome do funcionário"
+          required>
       </div>
 
-      <div class="field">
-        <label>Senha</label>
-        <input type="password" name="senha">
-      </div>
-
+      <!-- EMAIL -->
       <div class="field">
         <label>E-mail</label>
-        <input type="email" placeholder="email@exemplo.com" name="email">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="email@exemplo.com"
+          required>
       </div>
 
+      <!-- SENHA -->
+      <div class="field">
+        <label>Senha</label>
+        <input 
+          type="password" 
+          name="senha"
+          required>
+      </div>
+
+      <!-- CONFIRMAR SENHA -->
       <div class="field">
         <label>Confirmar Senha</label>
-        <input type="password" name="confsenha">
+        <input 
+          type="password" 
+          name="confirmarSenha"
+          required>
       </div>
 
+      <!-- CPF -->
       <div class="field full-width">
         <label>CPF</label>
-        <input type="text" placeholder="CPF do usuário" name="cpf">
+        <input 
+          type="text" 
+          name="cpf" 
+          placeholder="000.000.000-00"
+          required>
+      </div>
+
+      <!-- CARGO -->
+      <div class="field">
+        <label>Cargo</label>
+        <input 
+          type="text" 
+          name="cargo" 
+          placeholder="Ex: Bibliotecário"
+          required>
       </div>
 
       <!-- PERFIL -->
       <div class="field">
         <label>Perfil</label>
-        <select name="perfil">
+        <select name="perfil" required>
           <option value="">Selecione o perfil</option>
           <option value="ADMIN">Administrador</option>
-          <option value="BIBLIOTECARIO">Bibliotecário</option>
-          <option value="ATENDENTE">Atendente</option>
+          <option value="FUNCIONARIO">Funcionário</option>
         </select>
       </div>
 
-      <!-- ESPAÇO VAZIO PARA ALINHAR -->
-      <div></div>
+      <!-- STATUS -->
+      <div class="field full-width">
+        <label>
+          <input type="checkbox" name="ativo" checked>
+          Funcionário Ativo
+        </label>
+      </div>
 
       <!-- BOTÃO -->
       <div class="full-width">
-        <button type="submit">Cadastrar Usuário</button>
+        <button type="submit">Cadastrar Funcionário</button>
       </div>
 
     </form>
-
-
   </div>
 </main>
-<script src="/static/javascript/cadastro_user.js"></script>
+
+<script src="/static/javascript/cadastro_funcionario.js"></script>
 </body>
 </html>

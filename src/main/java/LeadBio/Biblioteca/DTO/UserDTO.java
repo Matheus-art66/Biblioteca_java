@@ -1,4 +1,4 @@
-package LeadBio.Biblioteca.BancoDB;
+package LeadBio.Biblioteca.DTO;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
 public class UserDTO {
-    @Positive
+
     private Integer id;
 
     @NotBlank
@@ -21,7 +21,7 @@ public class UserDTO {
     private String cpf;
 
     @NotBlank
-    @Size(max = 8)
+    @Size(min = 6, max = 60)
     private String senha;
 
 
