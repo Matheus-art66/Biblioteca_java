@@ -31,7 +31,7 @@ document.getElementById("formCadastro").addEventListener("submit", function (e) 
     })
         .then(resp => resp.json())
         .then(data => {
-            alert("Usuário cadastrado com sucesso!");
+            alert("Usuario já cadastrado!");
         })
         .catch(err => console.error(err));
 });

@@ -1,7 +1,7 @@
 package LeadBio.Biblioteca.Controller;
 
 import LeadBio.Biblioteca.DTO.UserDTO;
-import LeadBio.Biblioteca.Service.usuarioService;
+import LeadBio.Biblioteca.Service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/cadastrar")
 public class UsuarioController {
 
-    private final usuarioService usuario;
-    public UsuarioController(usuarioService usuario){
+    private final UsuarioService usuario;
+    public UsuarioController(UsuarioService usuario){
         this.usuario=usuario;
     }
 

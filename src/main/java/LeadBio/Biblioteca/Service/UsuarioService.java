@@ -7,10 +7,10 @@ import LeadBio.Biblioteca.Repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class usuarioService {
+public class UsuarioService {
 
     private final UserRepository userRepository ;
-    private usuarioService(UserRepository userRepository){this.userRepository =userRepository;}
+    public UsuarioService(UserRepository userRepository){this.userRepository =userRepository;}
 
     public UserDB cadastrar(UserDTO dto){
         // 🔴 Validações de negócio
@@ -40,6 +40,7 @@ public class usuarioService {
         }
 
         UserDB user = UserMapper.toEntiy(dto);
+
         return userRepository.save(user);
     }
 

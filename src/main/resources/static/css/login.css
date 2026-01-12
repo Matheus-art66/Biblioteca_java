@@ -9,7 +9,7 @@
 /* ===== FUNDO ===== */
 body {
   height: 100vh;
-  background: url(/static/img/img.jpg) no-repeat center center fixed;
+  background: url(/img/img.jpg) no-repeat center center fixed;
   background-size: cover;
   display: flex;
   justify-content: center;

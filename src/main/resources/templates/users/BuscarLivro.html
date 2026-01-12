@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisar Livros | Sistema de Biblioteca</title>
+    <link rel="stylesheet" href="/css/user.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Sistema de Biblioteca</h1>
+</header>
+
+<nav class="menu-user">
+    <a href="busca" class="active">Pesquisar Livros</a>
+    <a href="/emprestimouser">Meus Empréstimos</a>
+    <a href="/dados">Meus Dados</a>
+
+    <span class="menu-separator"></span>
+
+    <a href="/logout" class="logout">Sair</a>
+</nav>
+
+<main>
+    <div class="container">
+        <h2>Pesquisar Livros Disponíveis</h2>
+
+
+        <form class="filtros" action="/busca" method="get">
+            <input
+                    type="text"
+                    name="titulo"
+                    placeholder="Digite o nome do livro"
+            >
+
+            <select name="categoria">
+                <option value="">Todas as categorias</option>
+                <option value="programacao">Programação</option>
+                <option value="banco">Banco de Dados</option>
+                <option value="redes">Redes</option>
+            </select>
+
+            <button type="submit">Listar</button>
+        </form>
+
+
+        <table>
+            <thead>
+            <tr>
+                <th>Código</th>
+                <th>Livro</th>
+                <th>Autor</th>
+                <th>Categoria</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr>
+                <td>015</td>
+                <td>Algoritmos em Java</td>
+                <td>Robert Sedgewick</td>
+                <td>Programação</td>
+                <td>
+                    <form action="/emprestimo/realizar" method="post">
+                        <input type="hidden" name="codigoLivro" value="015">
+                        <button type="submit" class="btn-emprestar">
+                            Emprestar
+                        </button>
+                    </form>
+                </td>
+            </tr>
+
+            <tr>
+                <td>021</td>
+                <td>Banco de Dados MySQL</td>
+                <td>Carlos A. Heuser</td>
+                <td>Banco de Dados</td>
+                <td>
+                    <form action="/emprestimo/realizar" method="post">
+                        <input type="hidden" name="codigoLivro" value="021">
+                        <button type="submit" class="btn-emprestar">
+                            Emprestar
+                        </button>
+                    </form>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</main>
+
+</body>
+</html>
