@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class usuarioPageController {
     @GetMapping("/cadastroUser")
     public String cadastroUser(){
-        return "users/cadastrar_user";
+        return "cadastrar_user";
     }
 
     @GetMapping("/dados")
