@@ -1,6 +1,6 @@
 package LeadBio.Biblioteca.Controller.User;
 
-import LeadBio.Biblioteca.DTO.LivroDTO;
+import LeadBio.Biblioteca.BancoDB.LivroDB;
 import LeadBio.Biblioteca.Service.Usuarios.BuscaService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,11 +14,11 @@ public class BuscarController {
     public BuscarController(BuscaService busca) {this.busca=busca;}
 
     @GetMapping
-    public ResponseEntity<List<LivroDTO>> buscar(
+    public ResponseEntity<List<LivroDB>> buscar(
             @RequestParam(required = false) String titulo,
             @RequestParam(required = false) String categoria
     ) {
-        List<LivroDTO> livros = busca.buscarLivros(titulo, categoria);
+        List<LivroDB> livros = busca.buscarLivros(titulo, categoria);
         return ResponseEntity.ok(livros);
     }
 
