@@ -27,7 +27,7 @@
         <h2>Pesquisar Livros Disponíveis</h2>
 
 
-        <form class="filtros" action="/busca" method="get">
+        <form class="filtros" id="formBuscarLivro" method="get">
             <input
                     type="text"
                     name="titulo"
@@ -35,10 +35,11 @@
             >
 
             <select name="categoria">
-                <option value="">Todas as categorias</option>
-                <option value="programacao">Programação</option>
-                <option value="banco">Banco de Dados</option>
-                <option value="redes">Redes</option>
+                <option value="">Todas</option>
+                <option value="informatica">Informática</option>
+                <option value="saude">Saúde</option>
+                <option value="infantil">Infantil</option>
+                <option value="outros">Outros</option>
             </select>
 
             <button type="submit">Listar</button>
@@ -56,39 +57,7 @@
             </tr>
             </thead>
 
-            <tbody>
-
-            <tr>
-                <td>015</td>
-                <td>Algoritmos em Java</td>
-                <td>Robert Sedgewick</td>
-                <td>Programação</td>
-                <td>
-                    <form action="/emprestimo/realizar" method="post">
-                        <input type="hidden" name="codigoLivro" value="015">
-                        <button type="submit" class="btn-emprestar">
-                            Emprestar
-                        </button>
-                    </form>
-                </td>
-            </tr>
-
-            <tr>
-                <td>021</td>
-                <td>Banco de Dados MySQL</td>
-                <td>Carlos A. Heuser</td>
-                <td>Banco de Dados</td>
-                <td>
-                    <form action="/emprestimo/realizar" method="post">
-                        <input type="hidden" name="codigoLivro" value="021">
-                        <button type="submit" class="btn-emprestar">
-                            Emprestar
-                        </button>
-                    </form>
-                </td>
-            </tr>
-
-            </tbody>
+            <tbody id="tabelaLivros"></tbody>
         </table>
 
     </div>

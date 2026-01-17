@@ -1,8 +1,8 @@
-package LeadBio.Biblioteca.Controller;
+package LeadBio.Biblioteca.Controller.Adm;
 
 import LeadBio.Biblioteca.DTO.LivroDTO;
 import LeadBio.Biblioteca.BancoDB.LivroDB;
-import LeadBio.Biblioteca.Service.LivroService;
+import LeadBio.Biblioteca.Service.Funcionarios.LivroService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -11,12 +11,12 @@ public class LivroDTO {
     @Positive
     private Integer id;
 
-    @NotBlank
     private String titulo;
 
     @NotBlank
     private String nomeAutor;
     private String editora;
+    private String categoria;
 
     @Positive(message = "O ano deve ser maior que zero!")
     private Integer anoPubli;
@@ -59,4 +59,6 @@ public class LivroDTO {
     public BigDecimal getMulta() { return multa; }
     public void setMulta(BigDecimal multa) { this.multa = multa; }
 
+    public String getCategoria() {return categoria;}
+    public void setCategoria(String categoria) {this.categoria = categoria;}
 }

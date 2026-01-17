@@ -32,6 +32,9 @@ public class LivroDB {
     @Column(name = "editora")
     private String editora;
 
+    @Column(name = "categoria")
+    private String categoria;
+
     @Column(name = "status_reserva")
     private String statusReserva;
 

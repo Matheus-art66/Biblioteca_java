@@ -1,4 +1,4 @@
-package LeadBio.Biblioteca.Service;
+package LeadBio.Biblioteca.Service.Funcionarios;
 
 import LeadBio.Biblioteca.Repository.FuncionarioRepository;
 import org.springframework.stereotype.Service;

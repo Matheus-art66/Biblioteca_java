@@ -1,4 +1,4 @@
-package LeadBio.Biblioteca.Service;
+package LeadBio.Biblioteca.Service.Usuarios;
 
 import LeadBio.Biblioteca.BancoDB.UserDB;
 import LeadBio.Biblioteca.DTO.UserDTO;

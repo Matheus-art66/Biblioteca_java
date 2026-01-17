@@ -1,4 +1,4 @@
-package LeadBio.Biblioteca.Service;
+package LeadBio.Biblioteca.Service.Funcionarios;
 
 import LeadBio.Biblioteca.DTO.LivroDTO;
 import LeadBio.Biblioteca.BancoDB.LivroDB;

@@ -1,4 +1,4 @@
-package LeadBio.Biblioteca.Controller;
+package LeadBio.Biblioteca.Controller.Adm;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

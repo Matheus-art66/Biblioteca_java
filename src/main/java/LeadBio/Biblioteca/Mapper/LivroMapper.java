@@ -14,6 +14,7 @@ public class LivroMapper {
         livro.setDataRetirada(dto.getDataRetirada());
         livro.setDataDevolucaoPrevista(dto.getDataPrevista());
         livro.setEditora(dto.getEditora());
+        livro.setCategoria(dto.getCategoria());
         return livro;
     }
 
@@ -24,6 +25,7 @@ public class LivroMapper {
         dto.setTitulo(livro.getTitulo());
         dto.setNomeAutor(livro.getNomeAutor());
         dto.setEditora(livro.getEditora());
+        dto.setCategoria(livro.getCategoria());
         return dto;
     }
 
