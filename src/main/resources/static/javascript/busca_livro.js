@@ -25,13 +25,13 @@ document.getElementById("formBuscarLivro").addEventListener("submit", function (
             livros.forEach(livro => {
                 linhas += `
                     <tr>
-                        <td>${livro.codigo}</td>
+                        <td>${livro.id}</td>
                         <td>${livro.titulo}</td>
-                        <td>${livro.autor}</td>
+                        <td>${livro.nomeAutor}</td>
                         <td>${livro.categoria}</td>
                         <td>
                             <form action="/emprestimo/realizar" method="post">
-                                <input type="hidden" name="codigoLivro" value="${livro.codigo}">
+                                <input type="hidden" name="codigoLivro" value="${livro.id}">
                                 <button type="submit" class="btn-emprestar">
                                     Emprestar
                                 </button>

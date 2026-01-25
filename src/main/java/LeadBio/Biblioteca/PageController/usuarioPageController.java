@@ -21,7 +21,7 @@ public class usuarioPageController {
     }
 
     @GetMapping("/busca")
-    public String buscar(){
+    public String busca(){
         return "users/BuscarLivro";
     }
 
