@@ -14,36 +14,24 @@ document.getElementById("formCadastro").addEventListener("submit", function (e) 
     const dados = {
         nome: document.querySelector('input[name="nome"]').value,
         email: document.querySelector('input[name="email"]').value,
-        cpf: document.querySelector('input[name="cpf"]').value,
-        senha: senha
+        senha: senha,
+        cpf: document.querySelector('input[name="cpf"]').value
     };
 
-    // adiciona perfil só se existir
+    // 👉 só adiciona perfil se existir no HTML
     if (selectPerfil) {
         dados.perfil = selectPerfil.value;
     }
+    // se não existir, o banco assume CLIENTE
 
     fetch("/cadastrar", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dados)
     })
-    .then(response => {
-        if (response.status === 201) {
-            // ✅ sucesso → redireciona
-            window.location.href = "/busca";
-        } else if (response.status === 400) {
-            alert("Dados inválidos. Verifique o formulário.");
-        } else if (response.status === 409) {
-            alert("Usuário já cadastrado.");
-        } else {
-            alert("Erro inesperado ao cadastrar.");
-        }
-    })
-    .catch(error => {
-        console.error(error);
-        alert("Erro de conexão com o servidor.");
-    });
+        .then(resp => resp.json())
+        .then(data => {
+            alert("Usuário cadastrado com sucesso!");
+        })
+        .catch(err => console.error(err));
 });

@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class LivroDB {
+public class ConexaoDB_LV {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,9 +31,6 @@ public class LivroDB {
 
     @Column(name = "editora")
     private String editora;
-
-    @Column(name = "categoria")
-    private String categoria;
 
     @Column(name = "status_reserva")
     private String statusReserva;

@@ -1,10 +1,10 @@
 package LeadBio.Biblioteca.Mapper;
 
 import LeadBio.Biblioteca.BancoDB.UserDB;
-import LeadBio.Biblioteca.DTO.UserDTO;
+import LeadBio.Biblioteca.BancoDB.UserDTO;
 
 public class UserMapper {
-        public static UserDB toEntiy(UserDTO dto){
+    public static UserDB toEntiy(UserDTO dto){
         UserDB user = new UserDB();
         user.setNome(dto.getNome());
         user.setEmail(dto.getEmail());
