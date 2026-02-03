@@ -1,7 +1,7 @@
 package LeadBio.Biblioteca.Mapper;
 
 import LeadBio.Biblioteca.BancoDB.UserDB;
-import LeadBio.Biblioteca.BancoDB.UserDTO;
+import LeadBio.Biblioteca.DTO.UserDTO;
 
 public class UserMapper {
     public static UserDB toEntiy(UserDTO dto){

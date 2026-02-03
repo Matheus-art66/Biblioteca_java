@@ -17,8 +17,8 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> cadastrar(@RequestBody @Valid UserDTO userDTO) {
-        usuario.cadastrar(userDTO);
+    public ResponseEntity<Void> cadastrar(@RequestBody @Valid UserDTO user) {
+        usuario.cadastrar(user);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

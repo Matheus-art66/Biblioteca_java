@@ -1,7 +1,6 @@
 package LeadBio.Biblioteca.Service.Usuarios;
 
 import LeadBio.Biblioteca.BancoDB.LivroDB;
-import LeadBio.Biblioteca.DTO.LivroDTO;
 import LeadBio.Biblioteca.Repository.LivroRepository;
 import org.springframework.stereotype.Service;
 

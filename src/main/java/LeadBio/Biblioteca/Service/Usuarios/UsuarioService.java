@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class UsuarioService {
 
     private final UserRepository userRepository ;
-    public UsuarioService(UserRepository userRepository){this.userRepository =userRepository;}
+    private UsuarioService(UserRepository userRepository){this.userRepository =userRepository;}
 
     public UserDB cadastrar(UserDTO dto){
         // 🔴 Validações de negócio
@@ -40,7 +40,6 @@ public class UsuarioService {
         }
 
         UserDB user = UserMapper.toEntiy(dto);
-
         return userRepository.save(user);
     }
 

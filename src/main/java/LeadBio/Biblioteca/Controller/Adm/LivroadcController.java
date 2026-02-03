@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/livros")
-public class Controller_adc {
+public class LivroadcController {
     private final LivroService service;
-    public Controller_adc(LivroService service) {
+    public LivroadcController(LivroService service) {
         this.service=service;
     }
 
