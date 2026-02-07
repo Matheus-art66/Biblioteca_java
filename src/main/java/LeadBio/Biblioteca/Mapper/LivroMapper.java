@@ -12,6 +12,7 @@ public class LivroMapper {
         livro.setAnoPublicacao(dto.getAnoPubli());
         livro.setStatusReserva(dto.getStatusReserva());
         livro.setMulta(dto.getMulta());
+        livro.setCategoria(dto.getCategoria());
         livro.setDataRetirada(dto.getDataRetirada());
         livro.setDataDevolucaoPrevista(dto.getDataPrevista());
         livro.setEditora(dto.getEditora());
@@ -23,6 +24,7 @@ public class LivroMapper {
         LivroDTO dto = new LivroDTO();
         dto.setId(Math.toIntExact(livro.getId()));
         dto.setTitulo(livro.getTitulo());
+        dto.setCategoria(livro.getCategoria());
         dto.setNomeAutor(livro.getNomeAutor());
         dto.setEditora(livro.getEditora());
         return dto;

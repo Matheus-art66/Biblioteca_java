@@ -2,6 +2,7 @@ package LeadBio.Biblioteca.Controller.Adm;
 
 import LeadBio.Biblioteca.DTO.LivroDTO;
 import LeadBio.Biblioteca.BancoDB.LivroDB;
+import LeadBio.Biblioteca.Mapper.LivroMapper;
 import LeadBio.Biblioteca.Service.Funcionarios.LivroService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -20,11 +21,12 @@ public class LivroadcController {
     // 1. Adicionar novo livro
 
     @PostMapping
-    public ResponseEntity<LivroDB> adicionarLivro(
+    public ResponseEntity<LivroDTO> adicionarLivro(
             @RequestBody @Valid LivroDTO livro
     ) {
         LivroDB salvo = service.salvar(livro);
-        return ResponseEntity.status(HttpStatus.CREATED).body(salvo);
+        LivroDTO saver = LivroMapper.toDTO(salvo);
+        return ResponseEntity.status(HttpStatus.CREATED).body(saver);
     }
 
 }

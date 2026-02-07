@@ -4,13 +4,20 @@ import LeadBio.Biblioteca.BancoDB.UserDB;
 import LeadBio.Biblioteca.DTO.UserDTO;
 import LeadBio.Biblioteca.Mapper.UserMapper;
 import LeadBio.Biblioteca.Repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UsuarioService {
 
     private final UserRepository userRepository ;
-    private UsuarioService(UserRepository userRepository){this.userRepository =userRepository;}
+    private final PasswordEncoder encoder;
+
+    public UsuarioService(UserRepository userRepository, PasswordEncoder encoder){
+        this.userRepository =userRepository;
+        this.encoder=encoder;
+    }
 
     public UserDB cadastrar(UserDTO dto){
         // 🔴 Validações de negócio
@@ -38,8 +45,8 @@ public class UsuarioService {
         if (userRepository.existsByCpf(dto.getCpf())) {
             throw new IllegalArgumentException("CPF já cadastrado");
         }
-
         UserDB user = UserMapper.toEntiy(dto);
+        user.setSenha(encoder.encode(dto.getSenha()));
         return userRepository.save(user);
     }
 

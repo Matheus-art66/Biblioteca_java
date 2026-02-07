@@ -3,6 +3,12 @@ package LeadBio.Biblioteca.BancoDB;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "usuario")
@@ -10,7 +16,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDB {
+public class UserDB implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -34,8 +40,30 @@ public class UserDB {
     @PrePersist
     public void prePersist() {
         if (this.perfil == null) {
-            this.perfil = "CLIENTE";
+            this.perfil = "ROLE_CLIENTE";
         }
     }
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(perfil));
+    }
+
+    @Override
+    public String getPassword() {return senha;}
+
+    @Override
+    public String getUsername() {return nome;}
+
+    @Override
+    public boolean isAccountNonExpired() {return true;}
+
+    @Override
+    public boolean isAccountNonLocked() {return true;}
+
+    @Override
+    public boolean isCredentialsNonExpired() {return true;}
+
+    @Override
+    public boolean isEnabled() {return true;}
 }

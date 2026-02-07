@@ -1,6 +1,7 @@
 package LeadBio.Biblioteca.DTO;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
@@ -22,6 +23,7 @@ public class LivroDTO{
     private Integer anoPubli;
     private String statusReserva;
     private BigDecimal multa;
+    private String categoria;
 
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataRetirada;
@@ -59,4 +61,6 @@ public class LivroDTO{
     public BigDecimal getMulta() { return multa; }
     public void setMulta(BigDecimal multa) { this.multa = multa; }
 
+    public String getCategoria(){return categoria;}
+    public void setCategoria(String categoria) {this.categoria = categoria;}
 }

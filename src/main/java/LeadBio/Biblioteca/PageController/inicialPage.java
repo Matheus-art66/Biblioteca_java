@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class inicialPage {
-    @GetMapping("/inicialcadastro")
+    @GetMapping("/register")
     public String inicial(){
         return "cadastrar_user";
     }
