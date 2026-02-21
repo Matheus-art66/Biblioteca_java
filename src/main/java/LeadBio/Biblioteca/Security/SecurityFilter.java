@@ -17,7 +17,7 @@ import java.io.IOException;
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
     @Autowired
-    private TokenService tokenService; // Sua classe que valida o JWT
+    private TokenService tokenService; // classe que valida o JWT
 
     @Autowired
     private UserRepository userRepository; // Para buscar o usuário no banco

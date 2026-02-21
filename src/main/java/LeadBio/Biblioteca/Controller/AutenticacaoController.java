@@ -21,7 +21,7 @@ public class AutenticacaoController {
     private TokenService tokenService;
 
     @PostMapping("/login")
-    public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dados) {
+    public ResponseEntity<?> efetuarLogin(@RequestBody @Valid DadosAutenticacao dados) {
         // Cria o token de autenticação interno do Spring
         var authenticationToken = new UsernamePasswordAuthenticationToken(dados.email(), dados.senha());
 
