@@ -40,7 +40,7 @@ public class UserDB implements UserDetails {
     @PrePersist
     public void prePersist() {
         if (this.perfil == null) {
-            this.perfil = "ROLE_CLIENTE";
+            this.perfil = "ROLE_USER";
         }
     }
 
@@ -53,7 +53,7 @@ public class UserDB implements UserDetails {
     public String getPassword() {return senha;}
 
     @Override
-    public String getUsername() {return nome;}
+    public String getUsername() {return email;}
 
     @Override
     public boolean isAccountNonExpired() {return true;}
