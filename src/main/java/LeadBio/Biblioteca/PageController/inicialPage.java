@@ -13,4 +13,8 @@ public class inicialPage {
     public String login(){
         return "login";
     }
+    @GetMapping("/css/login")
+    public String csslogin(){return "css/login";}
+    @GetMapping("/css/usuario")
+    public String cssusuario(){return "css/usuario";}
 }

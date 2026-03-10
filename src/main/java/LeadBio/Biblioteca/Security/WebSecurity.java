@@ -30,10 +30,14 @@ public class WebSecurity {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .authorizeHttpRequests(auth->auth
-                        .requestMatchers("/login","/register").permitAll()
+                        .requestMatchers("/login","/register","css/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
+               .formLogin(form -> form
+                       .loginPage("/login")
+                       .permitAll()
+               )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }

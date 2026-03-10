@@ -16,7 +16,7 @@ import java.time.ZoneOffset;
 public class TokenService {
 
     // Defina uma chave qualquer no seu application.properties ou use o valor default abaixo
-    @Value("${api.security.token.secret:minha-chave-secreta-123}")
+    @Value("${API_SECURITY_TOKEN_SECRET}")
     private String secret;
 
     public String gerarToken(UserDB usuario) {
@@ -24,7 +24,7 @@ public class TokenService {
             // Define o algoritmo usando o seu secret
             Algorithm algoritmo = Algorithm.HMAC256(secret);
 
-            return JWT.create() // Esse é o método que estava dando erro
+            return JWT.create()
                     .withIssuer("API Biblioteca")
                     .withSubject(usuario.getEmail())
                     .withExpiresAt(dataExpiracao())
@@ -38,7 +38,7 @@ public class TokenService {
         try {
             Algorithm algoritmo = Algorithm.HMAC256(secret);
 
-            return JWT.require(algoritmo) // Esse é o outro método do erro
+            return JWT.require(algoritmo)
                     .withIssuer("API Biblioteca")
                     .build()
                     .verify(tokenJWT)

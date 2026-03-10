@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/livros")
+@RequestMapping("/admin/livros")
 public class LivroadcController {
     private final LivroService service;
     public LivroadcController(LivroService service) {
